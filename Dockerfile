@@ -1,3 +1,7 @@
 FROM tomcat:8.0.20-jre8
-# Dummy text to test 
-COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
+
+ENV MONGO_DB_USERNAME=admin\
+    MONGO_DB_PWD=password
+
+COPY target/Landmark.war webapps/Landmark.war
+
